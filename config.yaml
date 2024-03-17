@@ -1,51 +1,34 @@
 settings:
-  title: 'Status Page'
+  title: 'LQ 相关服务状态'
   url: 'https://status-page.eidam.dev' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
-  daysInHistogram: 90 # number of days you want to display in histogram
+  daysInHistogram: 30 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
-  allmonitorsOperational: 'All Systems Operational'
-  notAllmonitorsOperational: 'Not All Systems Operational'
-  monitorLabelOperational: 'Operational'
-  monitorLabelNotOperational: 'Not Operational'
-  monitorLabelNoData: 'No data'
-  dayInHistogramNoData: 'No data'
-  dayInHistogramOperational: 'All good'
+  allmonitorsOperational: '所有服务全部正常'
+  notAllmonitorsOperational: '部分服务正常'
+  monitorLabelOperational: '运作中'
+  monitorLabelNotOperational: '非运作中'
+  monitorLabelNoData: '无数据'
+  dayInHistogramNoData: '无数据'
+  dayInHistogramOperational: '全部正常'
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: fk.lqqq.ltd
+  - id: lq-faka
+    name: LQ 店铺
+    description: 'LQ 发卡店铺，自主购买各种AI账号，可零售，可批发，全网低价'
     url: 'https://fk.lqqq.ltd/'
     method: GET
     expectStatus: 200
+    followRedirect: false #
+    linkable: true #
 
-  - id: workers-cloudflare-com # unique identifier
-    name: api.lqqq.ltd
+  - id: lq-api
+    name: LQ 中转 API
+    description: 'LQ 中转 API ，可用GPT4、Claude3、Dalle3'
     url: 'https://api.lqqq.ltd/'
     method: GET
     expectStatus: 200
-    
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: false # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
-
-  - id: www-cloudflare-com
-    name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
-    url: 'https://www.cloudflare.com'
-    method: GET
-    expectStatus: 200
-    linkable: true # allows the title to be a link, default=true
-
-  - id: blog-cloudflare-com
-    name: The Cloudflare Blog
-    url: 'https://blog.cloudflare.com/'
-    method: GET
-    expectStatus: 200
+    followRedirect: false #
+    linkable: true #
