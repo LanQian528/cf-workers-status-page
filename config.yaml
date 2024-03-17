@@ -16,6 +16,18 @@ settings:
 
 monitors:
   - id: workers-cloudflare-com # unique identifier
+    name: fk.lqqq.ltd
+    url: 'https://fk.lqqq.ltd/'
+    method: GET
+    expectStatus: 200
+
+  - id: workers-cloudflare-com # unique identifier
+    name: api.lqqq.ltd
+    url: 'https://api.lqqq.ltd/'
+    method: GET
+    expectStatus: 200
+    
+  - id: workers-cloudflare-com # unique identifier
     name: workers.cloudflare.com
     description: 'You write code. They handle the rest.' # default=empty
     url: 'https://workers.cloudflare.com/' # URL to fetch
