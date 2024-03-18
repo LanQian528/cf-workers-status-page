@@ -11,9 +11,9 @@ settings:
   monitorLabelNotOperational: '非运作中'
   monitorLabelNoData: '无数据'
   dayInHistogramNoData: '无数据'
-  dayInHistogramOperational: '全部正常'
-  dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
-
+  dayInHistogramOperational: '无事件'
+  dayInHistogramNotOperational: '个事件'
+  
 monitors:
   - id: lq-faka
     name: LQ 店铺
